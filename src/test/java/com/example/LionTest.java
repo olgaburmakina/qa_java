@@ -7,9 +7,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-
 import java.util.List;
-
 import static org.junit.Assert.assertThrows;
 import static org.mockito.Mockito.when;
 
@@ -25,7 +23,6 @@ public class LionTest extends TestCase {
     Feline feline = Mockito.mock(Feline.class);
 
     private final boolean expected;
-
     private final String gender;
 
     public LionTest(boolean expected, String gender) {
@@ -33,7 +30,7 @@ public class LionTest extends TestCase {
         this.gender = gender;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: {0} {1}")
     public static Object[][] getData() {
         return new Object[][] {
                 {true,"Самец"},
